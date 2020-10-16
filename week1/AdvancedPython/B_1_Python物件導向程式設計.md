@@ -159,7 +159,7 @@ print(issubclass(Airplane, Car))  # Fasle
 
 ### 使用super()來執行父類別的方法(Method)
 ```
-在子類別中執行父類別的方法(Method)時，則可以使用super()內建方法來達成
+要在子類別中執行父類別的方法(Method)時，可以使用super()內建方法來達成
 ```
 ```
 # 交通工具(基底類別Base class )
@@ -177,6 +177,94 @@ class Car(Transportation):
 
 mazda = Car()
 mazda.drive()
+```
+
+### 多層繼承(Multi-Level Inheritance)
+```
+# 動物類別
+class Animal:
+    pass
+    
+# 鳥類類別
+class Bird(Animal):
+    # 飛行方法
+    def fly(self):
+        print("fly")
+
+# 鴨子類別
+class Duck(Bird):
+    pass
+    
+duck = Duck()
+duck.fly()
+```
+
+### 多重繼承(Multiple Inheritance)
+```
+子類別繼承(Inheritance)一個以上的父類別
+如果沒有適當的使用同樣會產生問題
+```
+#### OK
+```
+# 動物類別
+class Animal:
+    def eat(self):
+        print("Animal eat method is called.")
+
+# 鳥類類別
+class Bird:
+    def walk(self):
+        print("Bird walk method is called.")
+
+# 鴨子類別
+class Duck(Animal, Bird):
+    pass
+
+duck = Duck()
+duck.eat()
+```
+
+#### 容易出問題
+```
+Python編譯器在執行多重繼承(Multiple Inheritance)時，會先檢查類別本身[Duck類別]是否有eat()方法(Method)
+如果沒有，接著Python編譯器會尋找多重繼承(Multiple Inheritance)的第一個父類別Animal是否擁有，有的話即執行，並且停止搜尋第二個類別。
+先繼承的先執行
+```
+```
+# 動物類別
+class Animal:
+    def eat(self):
+        print("Animal eat method is called.")
+
+# 鳥類類別
+class Bird:
+    def eat(self):
+        print("Bird fly method is called.")
+
+# 鴨子類別
+class Duck(Animal, Bird): ## Animal在前
+    pass
+duck = Duck()
+duck.eat()
+```
+
+```
+# 動物類別
+class Animal:
+    def eat(self):
+        print("Animal eat method is called.")
+
+# 鳥類類別
+class Bird:
+    def eat(self):
+        print("Bird fly method is called.")
+
+# 鴨子類別
+class Duck(Bird,Animal): ## Bird在前
+    pass
+    
+duck = Duck()
+duck.eat()
 ```
 ## 多型(Polymorphism)
 ```
