@@ -1,5 +1,5 @@
 # Python小測驗_100題
-## Python入門
+# 1.Python入門
 ```
 1.要在螢幕輸出Hello, Python!  底下程式需使用哪個函數:
 
@@ -71,7 +71,7 @@ print(100 < 200)
 
 (A) False   (B) True   (C) 100   (D) 200
 ```
-# 2.資料行帶極其運算 DataType
+# 2.資料型態及其運算 DataType
 ```
 9.要定義一個整數變數a  底下程式碼需填入什麼:
 #!/usr/bin/python3
