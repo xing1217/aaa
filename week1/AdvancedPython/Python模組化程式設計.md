@@ -1,4 +1,4 @@
-# Python 模組(Module)
+# 1.Python 模組(Module)
 ```
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
@@ -16,10 +16,10 @@ def print_func( par ):
    return
 ```
 
-# 撰寫一個Python套件(package|包)
+# 2.撰寫一個Python套件(package|包)
 ```
+my_module:
 包含底下程式
-
 __init__.py
 Nice_to_meet_you.py
 support.py
