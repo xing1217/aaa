@@ -16,20 +16,45 @@ def print_func( par ):
    return
 ```
 
-# Python套件(package|包)
+# 撰寫一個Python套件(package|包)
+```
+包含底下程式
+
+__init__.py
+Nice_to_meet_you.py
+support.py
+```
+### Nice_to_meet_you.py
+```
+def Nice_to_meet_you( par ):
+   print("Hello : ", par," ! Nice to meet you! ")
+   return
+```
+###
+```
+上傳檔案到google drive
+將google drive mount到Colab 
+執行底下程式
+```
+
 ```
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
  
 # 導|載入模組
-import my_module
+import my_module.Nice_to_meet_you as haha2
  
 # 現在可以調用模組裡包含的函數了
-support.print_func("MyFriends")
+haha2.Nice_to_meet_you("MyFriends")
 ```
-# Nice_to_meet_you.py
+
 ```
-def Nice_to_meet_you( par ):
-   print("Hello : ", par," ! Nice to meet you! ")
-   return
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+ 
+# 導|載入模組
+import my_module.support as haha
+ 
+# 現在可以調用模組裡包含的函數了
+haha.print_func("MyFriends")
 ```
